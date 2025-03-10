@@ -1,4 +1,4 @@
 USE LaPlateforme;
 
 SELECT * FROM `etudiant`
-ORDER BY age ASC;
+ORDER BY nom ASC, prenom ASC;

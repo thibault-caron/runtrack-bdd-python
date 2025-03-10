@@ -1,4 +1,4 @@
 USE LaPlateforme;
 
-SELECT * FROM etudiant
+SELECT * FROM `etudiant`
 ORDER BY age DESC;

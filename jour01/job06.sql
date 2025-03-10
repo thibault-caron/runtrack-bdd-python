@@ -1,3 +1,3 @@
 USE LaPlateforme;
 
-SELECT * FROM etudiant;
+SELECT * FROM `etudiant`;

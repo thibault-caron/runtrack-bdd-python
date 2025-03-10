@@ -1,4 +1,4 @@
 USE LaPlateforme;
 
-SELECT * FROM etudiant
+SELECT * FROM `etudiant`
 WHERE nom = 'Dupuis' AND prenom = 'Gertrude';

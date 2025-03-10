@@ -2,4 +2,4 @@ USE LaPlateforme;
 
 SHOW TABLES;
 
-DESCRIBE etudiant;
+DESCRIBE `etudiant`;

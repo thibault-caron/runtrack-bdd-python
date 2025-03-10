@@ -1,4 +1,4 @@
 USE LaPlateforme;
 
 SELECT * FROM `etudiant`
-ORDER BY age ASC;
+WHERE age BETWEEN 18 AND 25;
