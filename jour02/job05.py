@@ -20,8 +20,7 @@ if mydb.is_connected():
     cursor = mydb.cursor()
 
     cursor.execute("SELECT SUM(superficie) AS total_superficie FROM etage")
-    result = cursor.fetchone()
-    total_superficie = result[0]
+    total_superficie = cursor.fetchone()[0]
 
     # Display the result
     print(f"La superficie de La Plateforme est de {total_superficie} m2")
