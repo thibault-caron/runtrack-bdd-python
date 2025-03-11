@@ -6,8 +6,7 @@ from dotenv import load_dotenv, dotenv_values
 # loading variables from .env file
 load_dotenv() 
 
-
-# Connexion à la base de données
+# Connection to the database (CONST from the .env file)
 mydb = mysql.connector.connect(
     host = os.getenv("HOST"),
     user = os.getenv("USER"),
@@ -15,19 +14,19 @@ mydb = mysql.connector.connect(
     database="LaPlateforme"
 )
 
-# Création d'un curseur
+# Creation of a cursor
 cursor = mydb.cursor()
 
-# Exécution de la requête pour récupérer tous les étudiants
+# Execution of the query to retrieve all students
 cursor.execute("SELECT * FROM etudiant")
 
-# Récupération des résultats
+# Retrieving the results
 etudiants = cursor.fetchall()
 
-# Affichage des résultats
+# Displaying the results
 for etudiant in etudiants:
     print(etudiant)
 
-# Fermeture du curseur et de la connexion
+# Closing the cursor and the connection
 cursor.close()
 mydb.close()
