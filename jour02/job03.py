@@ -1,13 +1,11 @@
 import mysql.connector
-# importing os module for environment variables
-import os
-# importing necessary functions from dotenv library
-from dotenv import load_dotenv
-# loading variables from .env file
-load_dotenv() 
+import os  # importing os module for environment variables
+from dotenv import load_dotenv  # importing necessary functions from dotenv library
+
+load_dotenv()  # loading variables from .env file
 
 
-# Connexion à la base de données
+# Connection to the database
 mydb = mysql.connector.connect(
     host = os.getenv("HOST"),
     user = os.getenv("USER"),
@@ -15,7 +13,7 @@ mydb = mysql.connector.connect(
     database="LaPlateforme"
 )
 
-# Création d'un curseur
+# Create a cursor to execute SQL queries
 cursor = mydb.cursor()
 
 # Query to add datas in etage

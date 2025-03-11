@@ -1,10 +1,8 @@
 import mysql.connector
-# importing os module for environment variables
-import os
-# importing necessary functions from dotenv library
-from dotenv import load_dotenv
-# loading variables from .env file
-load_dotenv() 
+import os  # importing os module for environment variables
+from dotenv import load_dotenv  # importing necessary functions from dotenv library
+
+load_dotenv()  # loading variables from .env file
 
 
 # Connection to the database
@@ -20,13 +18,8 @@ if mydb.is_connected():
     db_info = mydb.get_server_info()
     print(f"Connected to MySQL, version: {db_info}")
 
-    # Create a cursor to execute SQL queries
     cursor = mydb.cursor()
-
-    # Execute the SQL query to retrieve room names and capacities
     cursor.execute("SELECT nom, capacite FROM salle")
-
-    # Retrieve all results
     results = cursor.fetchall()
 
     # Display the result in the console
@@ -34,8 +27,6 @@ if mydb.is_connected():
     for row in results:
         print(f"Name: {row[0]}, Capacity: {row[1]}")
 
-    # Close the cursor
     cursor.close()
 
-# Close the connection
 mydb.close()

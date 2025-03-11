@@ -1,10 +1,8 @@
 import mysql.connector
-# importing os module for environment variables
-import os
-# importing necessary functions from dotenv library
-from dotenv import load_dotenv
-# loading variables from .env file
-load_dotenv() 
+import os  # importing os module for environment variables
+from dotenv import load_dotenv  # importing necessary functions from dotenv library
+
+load_dotenv()  # loading variables from .env file
 
 
 # Connection to the database
@@ -16,17 +14,18 @@ mydb = mysql.connector.connect(
 )
 
 if mydb.is_connected():
-   
     db_info = mydb.get_server_info()
     print(f"Connected to MySQL, version: {db_info}")
 
-    # Create a cursor to execute SQL queries
     cursor = mydb.cursor()
 
+    cursor.execute("SELECT SUM(superficie) AS total_superficie FROM etage")
+    result = cursor.fetchone()
+    total_superficie = result[0]
 
+    # Display the result
+    print(f"La superficie de La Plateforme est de {total_superficie} m2")
 
-    # Close the cursor
     cursor.close()
 
-# Close the connection
 mydb.close()
