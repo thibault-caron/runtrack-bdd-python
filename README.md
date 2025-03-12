@@ -1,2 +1,5 @@
 # runtrack-bdd-python
-Runtrack MySQL
+
+Runtrack MySQL with Python.
+
+Langages used: Python, SQL
