@@ -15,7 +15,7 @@ class Database:
             )
             self.cursor = self.mydb.cursor()
         
-        except mysql.connect.Error as error:
+        except mysql.connector.Error as error:
             print(f'Error occurred: {error}')
 
     def execute_query(self, query):

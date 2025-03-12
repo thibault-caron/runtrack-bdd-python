@@ -6,20 +6,16 @@ load_dotenv()  # loading variables from .env file
 
 class Database:
     def __init__(self, database_name="LaPlateforme"):
-        self.HOST = os.getenv("HOST")
-        self.USER = os.getenv("USER")
-        self.PASS = os.getenv("PASS")
-        self.database = database_name
         try: 
             self.mydb = mysql.connector.connect(
-                host = self.HOST,
-                user = self.USER,
-                password = self.PASS,
-                database=self.database
+                host = os.getenv("HOST"),
+                user = os.getenv("USER"),
+                password = os.getenv("PASS"),
+                database=database_name
             )
             self.cursor = self.mydb.cursor()
         
-        except mysql.connect.Error as error:
+        except mysql.connector.Error as error:
             print(f'Error occurred: {error}')
 
     def execute_query(self, query):

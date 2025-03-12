@@ -1,5 +1,6 @@
 CREATE DATABASE HumanRessourcesJ2;
 SHOW DATABASES;
+USE HumanRessourcesJ2;
 
 CREATE TABLE service(
    Id_service INT AUTO_INCREMENT,
